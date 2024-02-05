@@ -28,6 +28,7 @@
             font-size: 30px;
             margin-bottom: 10px;
             color: #333;
+            line-height: 1.3;
         }
         h2 { 
             font-size: 24px;
@@ -53,52 +54,54 @@
             margin-bottom: 10px;
             color: #777;
         }
-        .first-para-text {
-            color: #333;
-        }
+        
         .article-text {
             color: #333;
         }
+        
         .blurb-container {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    margin-left: -10px;
-    border: 2px solid #51ACEC; /* border color */
-    border-radius: 8px; /* add rounded corners */
+    border: 2px solid #51ACEC; 
+    border-radius: 8px; 
 }
 
 .blurb-line {
     width: 4px;
     height: 100%;
-    background-color: #51ACEC; /* border color */
+    background-color: #51ACEC; 
     margin-right: 10px;
 }
 
 .blurb-text {
     font-size: 18px;
-    font-weight: bold;
     color: #333; 
-    margin-left: 10px;
-    padding: 5px;
+    padding: 10px;
     border-radius: 6px; 
     background-color: #fff; 
 }
 
-    .first-para-text p:first-of-type::first-letter {
+.first-para-text p:first-of-type::first-letter {
         float: left;
         font-size: 6em;
         line-height: 0.5; 
         padding-top: 2px;
         padding-right: 5px;
         }
-        ul {
-            margin: 0;
-            padding-bottom: 1em;
-            line-height: 1.6;
+
+.iframe {
+        padding-bottom: 1.2em;
         }
-        /* margin on mobile */
-        @media (max-width: 640px) {
+
+.ul {
+    margin: 0;
+    padding-bottom: 1em;
+    line-height: 1.6;
+    }
+
+    /* margin on mobile */
+    @media (max-width: 640px) {
             body {
                 font-size: 18px;
             }
@@ -108,9 +111,6 @@
             }
         }
 
-        iframe {
-            padding-bottom: 1.2em;
-        }
         
     </style>
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
@@ -142,6 +142,7 @@
     <!-- Subhead -->
     <h2>Are Tests More Exciting Now?</h2>
 
+
     <div class="article-text">
         <p id="article-text">The first question facing us is: how do we determine or compare how exciting Test matches are over a period? Let’s look at this using two factors:</p>
             <ul>
@@ -154,30 +155,40 @@
             But without further ado, let’s get to our first factor - percentage of draws.</p>
     </div>
 
-    <!-- Subhead -->
-    <h2>Fewer Draws, By Far</h2>
 
     <div class="blurb-container">
         <div class="blurb-line"></div>
-        <p class="blurb-text">An analysis of all Test results, from the first Test in the history of international cricket played in 1877 between England and Australia, to the last Test of 2023, shows that there have been <b>fewer draws in Tests played in this current decade than during any other decade in the past century.</p>
+        <p class="blurb-text">An analysis of all Test results, from the first Test in the history of international cricket played in 1877 between England and Australia, to the last Test of 2023, shows that there have been <b>fewer draws in Tests played in this current decade than during any other decade in the past century.</b></p>
+    </div>
+        
+    <div style="min-height:600px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/7cA9D/embed.js?v=3" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/7cA9D/full.png" alt="This is a graph showing the percentage of drawn Tests in each decade, from the 1870s to the 2020s. The percentage of drawn Tests per decade has reduced drastically, from 46.3% in the 1980s to less than 20% since 2010." /></noscript></div>
+
+    <div class="article-text">
+    <p id="article-text"></p>
+        <ul>
+            <li>In the <b>1980s</b>, of the 266 Test matches played, 122 of them ended in draws. That’s <b>46.3%</b> of all Tests played in the decade.</li>
+            <br>
+            <li>But in the <b>2010s</b>, out of 433 Tests played, only 84 were drawn. That’s just <b>19.6%</b>, less than one in five, of all Tests in the decade.</li>
+        </ul>
+</div>
+
+<div class="article-text">
+    <p id="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac magna ut enim venenatis varius ac non urna. Proin eget lacus vitae tortor interdum tempor. Vivamus a ultrices elit. Mauris in dolor id odio dapibus varius. In hac habitasse platea dictumst. Sed suscipit auctor mauris, eget mattis enim. Sed tristique eu lectus nec aliquet. Nulla facilisi. Nullam et arcu ac felis interdum tempus. In hac habitasse platea dictumst. Donec congue sodales enim ac elementum. Integer vel libero eu risus scelerisque placerat vel in turpis. Nam at leo quis nulla faucibus tincidunt. Mauris ut est non</p>
     </div>
     
-    <iframe title="A Drastic Reduction in Draws" aria-label="Column Chart" id="datawrapper-chart-7cA9D" src="https://datawrapper.dwcdn.net/7cA9D/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="600" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
-    </script>
-    
-    <ul>
-    <li>In the <b>1980s</b>, of the 266 Test matches played, 122 of them ended in draws. That’s <b>46.3%</b> of all Tests played in the decade.<br></li>
-    <li>But in the <b>2010s</b>, out of 433 Tests played, only 84 were drawn. That’s just <b>19.6%</b>, less than one in five, of all Tests in the decade.</li>
-    </ul>
-    
-    <p id="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac magna ut enim venenatis varius ac non urna. Proin eget lacus vitae tortor interdum tempor. Vivamus a ultrices elit. Mauris in dolor id odio dapibus varius. In hac habitasse platea dictumst. Sed suscipit auctor mauris, eget mattis enim. Sed tristique eu lectus nec aliquet. Nulla facilisi. Nullam et arcu ac felis interdum tempus. In hac habitasse platea dictumst. Donec congue sodales enim ac elementum. Integer vel libero eu risus scelerisque placerat vel in turpis. Nam at leo quis nulla faucibus tincidunt. Mauris ut est non</p>
-    
-    <iframe title="Test Matches Are Becoming Closer Contests" aria-label="Column Chart" id="datawrapper-chart-4Yc9K" src="https://datawrapper.dwcdn.net/4Yc9K/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="600" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
-    </script>
+    <div style="min-height:600px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/4Yc9K/embed.js?v=7" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/4Yc9K/full.png" alt="This is a graph showing the average closeness score of each decade of Test cricket, from the 1870s to the 2020s. The average closeness score per decade has consistently increased over the past 50 years, and is currently at the highest it has been in a century." /></noscript></div>
 
-    <div class="blurb-container">
+    <br><div class="blurb-container">
         <div class="blurb-line"></div>
         <p class="blurb-text">Test cricket seems to be replete with such tight finishes nowadays, and it led this correspondent to wonder, has men’s Test cricket become more exciting in recent years?</p>
     </div>
+    
+    <!-- Subhead -->
+    <h2>Fewer Draws, By Far</h2>
+
 
     <a href="https://github.com/meghnadbose/Test_Cricket" target="_blank">GitHub</a>
+
+    </div>
+</body>
+</html>
