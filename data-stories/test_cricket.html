@@ -20,6 +20,7 @@
             margin: 0;
             padding: 0;
             line-height: 1.5;
+            background-color: #114368;
         }
         .page-container {
             background-color: #000; 
@@ -73,14 +74,14 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    border: 2px solid #51ACEC; 
+    border: 2px solid #114368; 
     border-radius: 8px; 
 }
 
 .blurb-line {
     width: 4px;
     height: 100%;
-    background-color: #51ACEC; 
+    background-color: #114368; 
     margin-right: 10px;
 }
 
@@ -110,6 +111,24 @@
     line-height: 1.6;
     }
 
+    table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #114368;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
     /* margin on mobile */
     @media (max-width: 640px) {
             body {
@@ -130,6 +149,7 @@
 <div class="container">
     <!-- Headline -->
     <h1 id="headline">More Results, Closer Matches in Tests Now: But Will That Be Enough to Save Cricket’s 5-Day Format?</h1>
+    <p><i>Even as Test cricket grapples with an existential crisis, an analysis of match results data reveals that the sport's longest format is a tighter contest now than it has been in a century.</i></p>
 
     <!-- Byline -->
     <p class="byline">By <span id="author">Meghnad Bose</span> | <span id="date">4 February 2024</span></p>
@@ -148,6 +168,7 @@
             <span class="drop-cap">O</span>n 28 January, as a young Shamar Joseph ripped through the Australian batting line-up and gave the West Indies a thrilling Test win Down Under, a visiting English side overcame their hosts India in the first Test of a promising series. Both matches could have swung either way until their final minutes. The eventual victory margins were a slender eight runs in Brisbane, and only twenty more in Hyderabad.</p>
             <p>Test cricket seems to be replete with such tight finishes nowadays, and it led this correspondent to wonder, has men’s Test cricket become more exciting in recent years?</p>
         </div>
+
 
     <!-- Subhead -->
     <h2>Are Tests More Exciting Now?</h2>
@@ -183,21 +204,73 @@
 </div>
 
 <div class="article-text">
-    <p id="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac magna ut enim venenatis varius ac non urna. Proin eget lacus vitae tortor interdum tempor. Vivamus a ultrices elit. Mauris in dolor id odio dapibus varius. In hac habitasse platea dictumst. Sed suscipit auctor mauris, eget mattis enim. Sed tristique eu lectus nec aliquet. Nulla facilisi. Nullam et arcu ac felis interdum tempus. In hac habitasse platea dictumst. Donec congue sodales enim ac elementum. Integer vel libero eu risus scelerisque placerat vel in turpis. Nam at leo quis nulla faucibus tincidunt. Mauris ut est non</p>
+    <p id="article-text">So, on our first factor, the percentage of results in Test matches has definitely increased by leaps and bounds in recent times. Now, let’s get to the victory margins.</p>
     </div>
+
+    <!-- Subhead -->
+    <h2>Tighter Matches Too</h2>
+
+    <div class="article-text">
+        <p id="article-text">
+            To measure the closeness of Test matches, this correspondent developed the following rubric - matching victory margins to points on a scale of 1 to 10.<br></p>
+            <ul>
+            <li>At the top of the table, with 10 points out 10, are the two <b>tied Tests</b> - the closest encounters in the history of Test cricket.</li><br>
+            <li>At the bottom are <b>draws</b>, with each draw earning a solitary point on the closeness index.</li><br>
+            <li>At two points out of 10 are matches that ended with an <b>innings defeat</b>, contests that are thoroughly one-sided affairs.</li><br>
+            <li>From four to nine points are matches with varying victory margins, either in terms of runs or wickets. Matches won by a margin of more than 200 runs, or by nine or 10 wickets in hand, receive four points on the closeness index. And matches won by less than 25 runs, or by only one wicket in hand, are right up there on the index, at nine points out of 10.</li></ul>
+            Here’s the full closeness index.<br></p>
+    </div>
+
+    <table>
+        <tr>
+            <th>Closeness Score</th>
+            <th>Match Result</th>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Tied test</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Win by less than 25 runs, or by 1 wicket</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Win by 25 to 49 runs, or by 2 wickets</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Win by 50 to 99 runs, or by 3 to 4 wickets</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Win by 100 to 149 runs, or by 5 to 6 wickets</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Win by 150 to 199 runs, or by 7 to 8 wickets</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Win by 200 runs or more, or by 9 to 10 wickets</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Win by an innings</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Draw</td>
+        </tr>
+    </table>
+
     
     <div style="min-height:600px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/4Yc9K/embed.js?v=7" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/4Yc9K/full.png" alt="This is a graph showing the average closeness score of each decade of Test cricket, from the 1870s to the 2020s. The average closeness score per decade has consistently increased over the past 50 years, and is currently at the highest it has been in a century." /></noscript></div>
 
-    <br><div class="blurb-container">
-        <div class="blurb-line"></div>
-        <p class="blurb-text">Test cricket seems to be replete with such tight finishes nowadays, and it led this correspondent to wonder, has men’s Test cricket become more exciting in recent years?</p>
-    </div>
+    <div class="article-text">
+        <p id="article-text">The closeness score average for Test matches this decade is 4, <b>last beaten in the 1910s by a score of 4.3.</b> So, you weren’t imagining it - Test cricket has indeed become a closer contest in recent times, and quite starkly so.</p>
     
-    <!-- Subhead -->
-    <h2>Fewer Draws, By Far</h2>
-
-
-    <a href="https://github.com/meghnadbose/Test_Cricket" target="_blank">GitHub</a>
+    <p>__________<br><br>View the code on <a href="https://github.com/meghnadbose/Test_Cricket" target="_blank">GitHub</a>.</p>
 
     </div>
 </body>
