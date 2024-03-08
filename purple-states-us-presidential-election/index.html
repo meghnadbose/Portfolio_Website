@@ -7,7 +7,7 @@
     <meta property="og:title" content="We Ranked the Purple States of the 2024 US Presidential Election. Here Are The Swingiest States of Them All">
     <meta property="og:description" content="An analysis of election data designed to calculate a ranking of the ‘swingy-ness’ of swing states">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://meghnadbose.github.io/indian-tv-media-coverage-analysis/">
+    <meta property="og:url" content="https://meghnadbose.github.io/purple-states-us-presidential-election">
     <meta property="og:image" content="purple-states.jpg">
     <meta property="og:image:width" content="1200"> 
     <meta property="og:image:height" content="630">
@@ -62,82 +62,107 @@
             margin-bottom: 10px;
             color: #777;
         }
-        
         .article-text {
             color: #333;
         }
-        
         .blurb-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    border: 2px solid #114368; 
-    border-radius: 8px; 
-}
-
-.blurb-line {
-    width: 4px;
-    height: 100%;
-    background-color: #114368; 
-    margin-right: 10px;
-}
-
-.blurb-text {
-    font-size: 18px;
-    color: #333; 
-    padding: 10px;
-    border-radius: 6px; 
-    background-color: #fff; 
-}
-
-.first-para-text p .large-initials {
-  float: left;
-  font-size: 6em;
-  line-height: 0.8; 
-  padding-top: 2px;
-  padding-right: 5px;
-}
-
-.iframe {
-        padding-bottom: 1.2em;
-        }
-
-.ul {
-    margin: 0;
-    padding-bottom: 1em;
-    line-height: 1.6;
-    }
-
-    table {
-            width: 100%;
-            border-collapse: collapse;
+            display: flex;
+            align-items: center;
             margin-bottom: 20px;
+            border: 2px solid #114368; 
+            border-radius: 8px; 
         }
-        th, td {
+        .blurb-line {
+            width: 4px;
+            height: 100%;
+            background-color: #114368; 
+            margin-right: 10px;
+        }
+        .blurb-text {
+            font-size: 18px;
+            color: #333; 
             padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+            border-radius: 6px; 
+            background-color: #fff; 
         }
-        th {
-            background-color: #114368;
-            color: #fff;
+        .first-para-text p .large-initials {
+          float: left;
+          font-size: 6em;
+          line-height: 0.8; 
+          padding-top: 2px;
+          padding-right: 5px;
         }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
+        .iframe {
+                padding-bottom: 1.2em;
         }
-
-    /* margin on mobile */
-    @media (max-width: 640px) {
-            body {
-                font-size: 18px;
+        .ul {
+            margin: 0;
+            padding-bottom: 1em;
+            line-height: 1.6;
+        }
+        table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
             }
-            .content {
-                padding-left: 0.2em;
-                padding-right: 0.2em;
+            th, td {
+                padding: 10px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
             }
-        }
-
+            th {
+                background-color: #114368;
+                color: #fff;
+            }
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+        @media (max-width: 640px) {
+                body {
+                    font-size: 18px;
+                }
+                .content {
+                    padding-left: 0.2em;
+                    padding-right: 0.2em;
+                }
+            }
         
+            .full-width-container {
+    display: flex;
+    flex-wrap: nowrap; /* Do not wrap items */
+    gap: 20px; /* Adds space between the graph and table */
+    margin: 0 20px; /* Adds margin to the left and right */
+    align-items: center; /* Aligns children vertically in the middle */
+}
+
+.graph, .table {
+    flex: 1; /* Each takes up an equal amount of space */
+    width: calc(50% - 10px); /* Adjust width to account for the gap */
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    box-sizing: border-box; /* Include padding and border in the element's width */
+}
+
+.table {
+    flex-direction: column; /* Stack table content vertically */
+    justify-content: center; /* Center the table vertically in its container */
+}
+
+/* Adjustments for the table to align it in the middle horizontally within its space */
+.table > table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+        @media (max-width: 768px) {
+            .full-width-container {
+                flex-direction: column;
+            }
+            .graph, .table {
+                width: 100%; 
+            }
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -171,62 +196,118 @@
         </div>
         
         <p>Over the course of this article, we try to quantify the ‘swingy-ness’ of swing states, or the purpleness or purple states. We will look at how often the states have flipped from one party to the other, how close their elections have been, and how recently they have been swinging - all of it, to arrive at a ranking of the swingy-ness of swing states.</p>
-            
-        
-            
-        <p>You can read more about the methodology <a href="https://github.com/meghnadbose/Indian-TV-Media-Coverage-Analysis" target="blank">here.</a></p>
+    </div>
 
-        <p>Here's what the analysis revealed.</p>
-
-      
+    <div class="subhead">
+        <h2>The Margin Meter</h2></div>
 
     <div class="article-text">
-        <p id="article-text"></p>
-        
-        <div style="min-height:658px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/PoHP5/embed.js?v=3" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/PoHP5/full.png" alt="States with the closest presidential election contests since the turn of the millennium, with the most recent elections being weighted the heaviest" /></noscript></div>
+        <p>Does the margin of each previous election matter equally? To estimate how swingy a state is today, it would be fair to say that the swingy-ness ‘form’ of a state matters too - hence, let’s give the greatest weightage to the most recent presidential election.</p>
+        <p>In our metric, therefore, 2020 was given the most weightage and each election before that was progressively given lesser and lesser weightage.</p>
 
-
-        <p id="article-text">However, in that same period, there were <b>zero debates</b> on: </p>
         <ul>
-            <li>The economy</li>
-            <li>Unemployment</li>
-            <li>Education</li>
-            <li>Healthcare</li>
+            <li>To do this, the victory margin percentage between Joe Biden and Donald Trump in 2020 was multiplied by 50.</li>
+            <li>The victory margin percentage between Donald Trump and Joe Biden in 2016 was multiplied by half of 50, or 25.</li>
+            <li>The victory margin percentage between Barack Obama and Mitt Romney in 2012 was multiplied by half of 25, or 12.5.</li>
+            <li>And so on, till the election in 2000 in which George W. Bush beat Al Gore. The victory margin percentage in that election was multiplied by 1.5625.</li>
         </ul>
 
-        <p id="article-text">Speaking about the inspiration for his analysis, Verma says, “I had watched the documentary ‘Manufacturing Consent’ in which they talk about how narratives are formed. There is a comparison shown in the film between the amount of newspaper coverage accorded to two different wars. From the time I saw the film, the idea was stuck in my head that to create a narrative, it’s about how much you push something (to viewers). There was also a Vox video I watched on “firehosing of falsehoods.”</p>
+        <p>The sum of these scores for each state gave the Margin Meter score for that state.</p>
+        <p>You can read more about the methodology <a href="https://github.com/meghnadbose/purple-states" target="blank">here.</a></p>
     </div>
 
-    <!-- Subhead -->
-    <h2>Times Now in 2024: Religion Express</h2>
+</div>
 
-    <!-- Image -->
-    <img class="featured-image" src="TimesNow.png" alt="Times Now's videos were extremely editorialized in favor of Hindutva and the ruling Bharatiya Janata Party (BJP)">
+<!-- Full width section for graph and table -->
+<div class="full-width-container">
+    <div class="graph" style="min-height:637px">
+        <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/PoHP5/embed.js?v=6" charset="utf-8"></script>
+        <noscript><img src="https://datawrapper.dwcdn.net/PoHP5/full.png" alt="States with the closest presidential election contests since the turn of the millennium, with the most recent elections being weighted the heaviest" /></noscript>
+    </div>
+
+    <div class="table">
+        <table>
+            <tr>
+                <th>Rank</th>
+                <th>State</th>
+                <th>Margin Meter Score</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Pennsylvania</td>
+                <td>222.25</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Wisconsin</td>
+                <td>223.69</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Florida</td>
+                <td>242.37</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>North Carolina</td>
+                <td>242.63</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Arizona</td>
+                <td>314.52</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Georgia</td>
+                <td>339.66</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Nevada</td>
+                <td>354.34</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Michigan</td>
+                <td>383.99</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>New Hampshire</td>
+                <td>510.46</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Minnesota</td>
+                <td>568.82</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div class="container">
+
+    <div class="subhead">
+        <h2>The Flip Meter</h2></div>
 
     <div class="article-text">
-        <p id="article-text">Take a look at the following examples. These are among some of the episodes of the primetime shows on Times Now, The Newshour with Navika Kumar and India Upfront with Padmaja Joshi.</p>
-            
-    </div>
-     
-    <!-- Subhead -->
-    <h2>CNN-News18: On Similar Lines</h2>
+        <p>How many times has a state flipped from one party to the other in recent presidential elections? Specifically, we’re looking at all presidential elections since 2000, but with the most recent elections weighted the heaviest.</p>
 
-    <!-- Image -->
-    <img class="featured-image" src="CNN-News18.png" alt="None of CNN-News18's 111 primetime videos fell into the category of 'criticizing the Modi government.'">
+<ul>
+<li>For example, if a state flipped in 2020 (compared to 2016), it would get 50 added to its Flip Meter score.</li>
+<li>If it flipped in 2016 (compared to 2012), it would get half of 50, or 25, added to its score.</li>
+<li>A flip in the 2000 election (compared to 1996) would only lead to an addition of 1.5625 to the score.</li>
+</ul>
 
-    <div class="article-text">
-        <p id="article-text">The two primetime shows for which data was collected are The Hard Facts with Rahul Shivshankar, and The Right Stand with Anand Narasimhan. <b>None of the 111 primetime videos from these two shows on CNN-News18 fell into the category of 'criticizing the Modi government'.</b> But 21 of the videos were focused on criticizing the Opposition.</p>
+<p>The sum of these scores for each state gave the Flip Meter score for that state.</p>
 
-    </div>        
+    <p>__________</p>
+    <p><b>View the full methodology and code on GitHub <a href="https://github.com/meghnadbose/Indian-TV-Media-Coverage-Analysis" target="_blank">here</a>, and take a look at my other data stories <a href="../" target="_blank">here</a>.</b></p>
+</div>
 
-    <!-- Image -->
-    <img class="featured-image" src="Quote-Card-2.png" alt="'The focus is on questioning the Opposition so that people don't question the government instead,' quipped Verma.">
-
-
-        <p>__________</p><p><b>View the full methodology and code on GitHub <a href="https://github.com/meghnadbose/Indian-TV-Media-Coverage-Analysis" target="_blank">here</a>, and take a look at my other data stories <a href="../" target="_blank">here</a>.</b></p>
-
-    </div>
-    
+</div>
 
 </body>
 </html>
