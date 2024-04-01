@@ -275,46 +275,30 @@
 
 
 <style>
-  .with-image-bg,
-  .with-video-bg {
-      position: relative;
-      background-size: cover;
-      margin-bottom: 2em;
-
-      /* Center everything inside */
-      min-height: 70svh; 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding-right: 80px;
-
-      /* White text with a shadow 
-      color: white;
-      text-shadow: 0px 0px 100px black,
-          0px 0px 10px rgba(0, 0, 0, 0.5); */
-  }
-
-/* Media query for screens less than 640px wide */
-@media (max-width: 640px) {
-    .with-image-bg {
-        background-image: url('mobile-bg-image.jpg');
-        justify-content: flex-start; 
-        align-items: flex-start; 
-        padding-top: 20px; 
-        text-align: left; 
-        padding-left: 20px; 
-    }
-  }
-
   .with-image-bg {
-      background-image: url('bg-image.jpg');
+  background-image: url('bg-image.jpg');
+  position: relative;
+  background-size: cover;
+  margin-bottom: 2em;
+  min-height: 70vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 40px;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  .with-image-bg {
+    background-image: url('mobile-bg-image.jpg');
+    align-items: flex-start;
+    padding-top: 5px; /* Ensures no padding is pushing content down */
   }
 
-  /* Media query for screens less than 640px wide */
-@media (max-width: 640px) {
-    .with-image-bg {
-        background-image: url('mobile-bg-image.jpg'); 
-    }
+  .with-image-bg > * {
+    margin-top: 0px; /* Remove any top margin from direct children */
+    padding-top: 5px; /* Ensure no padding on children is pushing content down */
+  }
 }
 
   .video-background {
@@ -348,7 +332,7 @@
 </div>
 <div class="content">
     <div class="byline">
-        <p>By <a href="https://meghnadbose.github.io/">Meghnad Bose</a></p>
+        <p>By <a href="https://meghnadbose.github.io/">Meghnad Bose</a>, reporting from Ireland and Northern Ireland</p>
     </div>
     <p>We had to create another <code>class="content"</code> before the byline/after the header so everything would
         line up okay.</p>
