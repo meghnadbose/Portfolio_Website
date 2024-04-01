@@ -256,6 +256,21 @@
         padding-right: 0.5em;
       }
     }
+
+    .sticky-thing video {
+  width: 100%; 
+  height: auto; 
+  object-fit: cover; 
+  object-position: center; 
+}
+
+/* Adjustments for mobile devices */
+@media (max-width: 640px) {
+  .sticky-thing video {
+    height: 100vh; 
+    width: auto; 
+  }
+}
   </style>
 
 
@@ -344,7 +359,6 @@
 
     <div class="sticky-thing">
       <video id="scrolly-video" autoplay loop muted>
-        <!-- The source will be set via JavaScript -->
       </video>
     </div>
 
@@ -399,6 +413,14 @@
       repellendus.</p>
   </div>
     
+  <script>
+    new ScrollyVideo({
+      scrollyVideoContainer: document.querySelector("#scrolly-video .sticky-thing"),
+      src: "Belfast_desktop.mp4",
+      full: true,
+      // cover: true
+    });
+  </script>
   <style>
     .step {
       height: 100vh;
@@ -409,30 +431,6 @@
       object-fit: cover;
     } */
   </style>
-
-<script>
-  // Function to dynamically load video based on the device's width
-  function loadResponsiveVideo() {
-    var videoElement = document.querySelector("#scrolly-video .sticky-thing video");
-    var videoSource = window.innerWidth >= 640 ? "Belfast_desktop.mp4" : "Belfast_mobile.mp4"; // Using 640px as a breakpoint for mobile devices
-
-    // Update the video source
-    videoElement.src = videoSource;
-
-    // Initialize the ScrollyVideo with the updated video element
-    new ScrollyVideo({
-      scrollyVideoContainer: document.querySelector("#scrolly-video .sticky-thing"),
-      src: videoSource, // Use the dynamically determined video source
-      full: true,
-    });
-  }
-
-  // Load the correct video when the page loads
-  window.addEventListener("load", loadResponsiveVideo);
-
-  // Optional: Reload the correct video on window resize if you expect users to resize their browser or change orientation of their device
-  window.addEventListener("resize", loadResponsiveVideo);
-</script>
 
 </body>
 
