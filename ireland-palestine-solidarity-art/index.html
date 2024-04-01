@@ -341,8 +341,13 @@
 </div>
 
   <section id="scrolly-video" class="scrolly-container">
+
     <div class="sticky-thing">
+      <video id="scrolly-video" autoplay loop muted>
+        <!-- The source will be set via JavaScript -->
+      </video>
     </div>
+
     <div class="steps-container">
       <div class="step" id="step-first">
         <p>You will have to use VS Code's <strong>Live Server</strong> extension to do this locally. Once you've
@@ -419,7 +424,7 @@
     */
     new ScrollyVideo({
       scrollyVideoContainer: document.querySelector("#scrolly-video .sticky-thing"),
-      src: "Belfast_desktop.mp4",
+      src: "Belfast_mobile.mp4",
       full: true,
       // cover: true
     });
@@ -434,6 +439,26 @@
       object-fit: cover;
     } */
   </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var videoElement = document.getElementById('scrolly-video');
+    var videoSource = window.innerWidth < 640 ? 'Belfast_mobile.mp4' : 'Belfast_desktop.mp4';
+    
+    // Create a <source> element and set the appropriate attributes
+    var sourceElement = document.createElement('source');
+    sourceElement.setAttribute('src', videoSource);
+    sourceElement.setAttribute('type', 'video/mp4');
+    
+    // Append the <source> element to the video element
+    videoElement.appendChild(sourceElement);
+    
+    // Load the video file
+    videoElement.load();
+  });
+</script>
+
+
 
 </body>
 
