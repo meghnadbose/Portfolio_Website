@@ -398,67 +398,41 @@
       cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor
       repellendus.</p>
   </div>
-  <div class="footer">
-    <div class="content">
-      <p>You can find the code for this template <a href="https://github.com/jsoma/page-templates/">here</a>. Delete
-        these lines
-        when you use it, and don't forget to change the <code>title</code> tag!!!</p>
-    </div>
-  </div>
-
-  <script>
-    /*
-    Different videos need different things - does the reader need to see
-    the entire screen of the video, or you want to make sure it covers the
-    entire window?
-
-    You can experiment with yours by removing the // from the full and
-    cover options below to see how it looks with your videos. 
-   
-    You can see parameters at 
-    https://github.com/dkaoster/scrolly-video?tab=readme-ov-file#-options--attributes
-
-    You might also need to adjust object-fit being 'cover' vs 'contain' in the CSS below
-
-    Be sure to check mobile!!
-    */
-    new ScrollyVideo({
-      scrollyVideoContainer: document.querySelector("#scrolly-video .sticky-thing"),
-      src: "Belfast_mobile.mp4",
-      full: true,
-      // cover: true
-    });
-  </script>
+    
   <style>
     .step {
       height: 100vh;
       margin-bottom: 0;
     }
 
-    /* .sticky-thing > canvas {
+      /* .sticky-thing > canvas {
       object-fit: cover;
     } */
   </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var videoElement = document.getElementById('scrolly-video');
-    var videoSource = window.innerWidth < 640 ? 'Belfast_mobile.mp4' : 'Belfast_desktop.mp4';
-    
-    // Create a <source> element and set the appropriate attributes
-    var sourceElement = document.createElement('source');
-    sourceElement.setAttribute('src', videoSource);
-    sourceElement.setAttribute('type', 'video/mp4');
-    
-    // Append the <source> element to the video element
-    videoElement.appendChild(sourceElement);
-    
-    // Load the video file
-    videoElement.load();
-  });
+  // Function to dynamically load video based on the device's width
+  function loadResponsiveVideo() {
+    var videoElement = document.querySelector("#scrolly-video .sticky-thing video");
+    var videoSource = window.innerWidth >= 640 ? "Belfast_desktop.mp4" : "Belfast_mobile.mp4"; // Using 640px as a breakpoint for mobile devices
+
+    // Update the video source
+    videoElement.src = videoSource;
+
+    // Initialize the ScrollyVideo with the updated video element
+    new ScrollyVideo({
+      scrollyVideoContainer: document.querySelector("#scrolly-video .sticky-thing"),
+      src: videoSource, // Use the dynamically determined video source
+      full: true,
+    });
+  }
+
+  // Load the correct video when the page loads
+  window.addEventListener("load", loadResponsiveVideo);
+
+  // Optional: Reload the correct video on window resize if you expect users to resize their browser or change orientation of their device
+  window.addEventListener("resize", loadResponsiveVideo);
 </script>
-
-
 
 </body>
 
