@@ -5,26 +5,26 @@ var pymChild = new pym.Child();
 
 var data = [
    
-{'year': 2004, 'press': 120},
-{'year': 2005, 'press': 106},
-{'year': 2006, 'press': 105},
-{'year': 2007, 'press': 120},
-{'year': 2008, 'press': 118},
-{'year': 2009, 'press': 105},
-{'year': 2010, 'press': 122},
-{'year': 2011, 'press': 131},
-{'year': 2012, 'press': 131},
-{'year': 2013, 'press': 140},
-{'year': 2014, 'press': 140},
-{'year': 2015, 'press': 136},
-{'year': 2016, 'press': 133},
-{'year': 2017, 'press': 136},
-{'year': 2018, 'press': 138},
-{'year': 2019, 'press': 140},
-{'year': 2020, 'press': 142},
-{'year': 2021, 'press': 142},
-{'year': 2022, 'press': 150},
-{'year': 2023, 'press': 161}
+{'year': 2004, 'press': 0},
+{'year': 2005, 'press': 0},
+{'year': 2006, 'press': 0},
+{'year': 2007, 'press': 0},
+{'year': 2008, 'press': 0},
+{'year': 2009, 'press': 1},
+{'year': 2010, 'press': 0},
+{'year': 2011, 'press': 2},
+{'year': 2012, 'press': 3},
+{'year': 2013, 'press': 1},
+{'year': 2014, 'press': 1},
+{'year': 2015, 'press': 4},
+{'year': 2016, 'press': 1},
+{'year': 2017, 'press': 2},
+{'year': 2018, 'press': 1},
+{'year': 2019, 'press': 2},
+{'year': 2020, 'press': 4},
+{'year': 2021, 'press': 7},
+{'year': 2022, 'press': 7},
+{'year': 2023, 'press': 7}
 ]
 
 
