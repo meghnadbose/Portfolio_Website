@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive: How Accurately Can You Guess India's Trajectory Since Modi Became PM in 2014?</title>
+    <meta property="og:title" content="Interactive: How Accurately Can You Guess India's Trajectory Since Modi Became PM in 2014?">
+    <meta property="og:description" content="This correspondent analyzed 809 videos across eight different primetime shows on Times Now, CNN-News18, NDTV 24x7 and India Today.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://meghnadbose.github.io/indian-tv-media-coverage-analysis/">
+    <meta property="og:image" content="Media-Coverage-Analysis-India-2024.png">
+    <meta property="og:image:width" content="1200"> 
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Meghnad Bose">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:author" content="Meghnad Bose">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/d3v4.js"></script>
+<script src="js/pym.js"></script>
+
+
+    <style>
+        body {
+            font-family: 'Nunito Sans', sans-serif; 
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            background-color: white;
+        }
+        .page-container {
+            background-color: white; 
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+        }
+        h1 {
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: #333;
+            line-height: 1.3;
+        }
+        h2 { 
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #333;
+            padding-top: 20px;
+            padding-right: 20px;
+        }
+        .byline {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #777;
+        }
+        .featured-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .caption {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #777;
+        }
+        
+        .article-text {
+            color: #333;
+        }
+        
+        .blurb-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 2px solid #114368; 
+    border-radius: 8px; 
+}
+
+.blurb-line {
+    width: 4px;
+    height: 100%;
+    background-color: #114368; 
+    margin-right: 10px;
+}
+
+.blurb-text {
+    font-size: 18px;
+    color: #333; 
+    padding: 10px;
+    border-radius: 6px; 
+    background-color: #fff; 
+}
+
+.first-para-text p .large-initials {
+  float: left;
+  font-size: 6em;
+  line-height: 0.8; 
+  padding-top: 2px;
+  padding-right: 5px;
+}
+
+.iframe {
+        padding-bottom: 1.2em;
+        }
+
+.ul {
+    margin: 0;
+    padding-bottom: 1em;
+    line-height: 1.6;
+    }
+
+.njam-container {
+margin: auto;
+}
+
+
+    table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #114368;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+    /* margin on mobile */
+    @media (max-width: 640px) {
+            body {
+                font-size: 18px;
+            }
+            .content {
+                padding-left: 0.2em;
+                padding-right: 0.2em;
+            }
+        }
+
+        
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <!-- Headline -->
+    <h1 id="headline">Interactive: How Accurately Can You Guess India's Trajectory Since Modi Became PM in 2014?</h1>
+    <p>This correspondent analyzed 809 videos across eight different primetime shows on Times Now, CNN-News18, NDTV 24x7 and India Today, and quantified the dominance of religious themes in mainstream media discourse.</p>
+
+    <!-- Byline -->
+    <p class="byline">By <span id="author"><a href="https://meghnadbose.github.io" target="blank">Meghnad Bose</a></span> | <span id="date">18 February 2024</span></p>
+    
+    <!-- Featured Image -->
+    <img class="featured-image" src="Media-Coverage-Analysis-India-2024.png" alt="In election year, religious issues and Opposition-bashing dominate primetime TV news in India">
+        
+    <!-- Caption for Featured Image -->
+    <p class="caption">The Indian media is far from covering itself in glory. Graphic: Meghnad Bose | Images courtesy: Times Now, CNN-News18, India Today and NDTV 24x7</p>
+    
+    <br>
+    
+    <!-- Article Text -->
+    <div class="first-para-text">
+        
+        <p><span class="large-initials">I</span>t's election year in the world's largest democracy. But even as India readies itself for what is going to be the biggest parliamentary election ever in the history of the world in terms of the number of eligible voters, the Indian media is far from covering itself in glory.</p>
+        
+        <p>An analysis of eight primetime shows across four of India's leading English-language television news channels shows that religious issues and targeting of Opposition parties have dominated the discourse on the airwaves in election year.</p>
+            
+        <p>The constant focus on the Opposition is complemented only by how rare it is for these shows to question the policies and politics of the Narendra Modi-led government instead.</p>
+            
+        <p>This correspondent analyzed 809 videos across eight different shows on Times Now, CNN-News18, NDTV 24x7 and India Today. The videos were categorized into the following categories:</p>
+            
+        <img class="featured-image" src="Categories.png" alt='The different categories of themes are mentioned.'>
+            
+        <p>You can read more about the methodology <a href="https://github.com/meghnadbose/Indian-TV-Media-Coverage-Analysis" target="blank">here.</a></p>
+
+        <p>Here's what the analysis revealed.</p>
+
+    <div class='njam-container'>
+        <h2>How Has India Fared in the World Press Freedom Rankings Since 2014?</h2>    
+        <p><i>How accurately can you draw India's trajectory on the global press freedom index compiled by Reporters Without Borders?</i></p>
+    </div>
+
+    <div id='chart-body-4'></div>
+            <div id='answer-4' class='answer'>Complete the graph above.</div><div id='explain-4' class='explain'><p>India's position on the World Press Freedom Index has declined sharply under Prime Minister Narendra Modi.</p></div>
+
+    </div>
+    
+    <script src="js/d3v4.js"></script>
+    <script src='js/init_press.js'></script>
+
+</body>
+</html>
+
