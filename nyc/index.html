@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mapbox class</title>
+	<link rel="stylesheet" href="reset.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.css" rel="stylesheet">
+	<script src="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.js"></script>
+</head>
+
+<style>
+	body {
+		font-size: 20px;
+		line-height: 1.4;
+	}
+	.container {
+/*		background: red;*/
+		width: 600px;
+		margin: 40px auto 0 auto;
+	}
+	
+	h1 {
+		font-size: 50px;
+		margin-bottom: 0px;
+		font-weight: bold;
+	}
+	
+	h2 {
+		font-size: 35px;
+		margin-bottom: 40px;
+	}
+
+	.byline {
+		font-style: italic;
+		margin-bottom: 18px;
+	}
+
+	p {
+		margin-bottom: 18px;
+	}
+
+	#map {
+		width: 100%;
+		height: 500px;
+		background: yellow;
+		margin-bottom: 18px;
+	}
+
+</style>
+
+<body>
+
+	<div class="container">
+		<h1>Ace Your Game: Discover NYC's Top Public Tennis Courts</h1>
+		<h2>Explore the best spots to serve and volley in the city that never sleeps!</h2>
+		<p class="byline">By Meghnad Bose</p>
+		<p>New York City is a treasure trove for tennis enthusiasts, offering a plethora of public courts scattered across its vibrant boroughs. Central Park's Tennis Center is a top choice, with its idyllic location and well-maintained clay courts. Just imagine serving an ace with the iconic skyline as your backdrop! For those seeking a lively atmosphere, the East River Park courts in Manhattan provide a scenic view of the river and bustling surroundings. Over in Brooklyn, Prospect Park offers a serene escape with its leafy courts, perfect for a peaceful match amidst nature.</p>
+		<div id="map"></div>
+		<p>Venture to the Bronx, and you'll find the grand Pelham Bay Park, boasting 20 courts and ample space to perfect your backhand. Queens is not left behind, home to the famed USTA Billie Jean King National Tennis Center, where you can channel your inner pro on the same courts as the US Open champions. For a local favorite, try the Astoria Park courts, offering stunning views of the RFK Bridge. Staten Island's Silver Lake Park rounds out the city's offerings with its picturesque setting and well-kept courts. Whether you're a seasoned player or a curious beginner, NYC's public courts are your ticket to tennis bliss in the heart of the urban jungle!</p>
+	</div>
+
+    <script>
+
+mapboxgl.accessToken = 'pk.eyJ1IjoibWVnaG5hZGJvc2UiLCJhIjoiY2xxNGxkcGx0MDdseDJrdWs0OTltaGxxdSJ9.lLJlR1dtomwXeFu9HisSug';
+
+const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    center: [-74.0060, 40.7128], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+    zoom: 9, 
+    style: 'mapbox://styles/meghnadbose/clyr85ngs02fi01qj39tffud5'
+});
+
+map.on('style.load', () => {
+    map.addSource('neighborhoods', {
+        type: 'geojson',
+        data: 'data/neighborhoods.geojson'
+    });
+
+    map.addLayer({
+        'id': 'neighborhoods',
+        'type': 'circle',
+        'source': 'neighborhoods',
+        'paint': {
+            'circle-radius': 4,
+            'circle-color': '#0000ff',
+            'circle-stroke-color': 'white',
+            'circle-stroke-width': 1
+        }
+    });
+
+    const popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+    });
+
+    map.on('mouseenter', 'neighborhoods', (e) => {
+        // Change the cursor style as a UI indicator.
+        map.getCanvas().style.cursor = 'pointer';
+
+        // Copy coordinates array.
+        const coordinates = e.features[0].geometry.coordinates.slice();
+        const name = e.features[0].properties.name;
+        const borough = e.features[0].properties.borough;
+
+        // Ensure that if the map is zoomed out such that multiple
+        // copies of the feature are visible, the popup appears
+        // over the copy being pointed to.
+        if (['mercator', 'equirectangular'].includes(map.getProjection().name)) {
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+        }
+
+        // Populate the popup and set its coordinates
+        // based on the feature found.
+        popup.setLngLat(coordinates).setHTML(name + ", " + borough).addTo(map);
+    });
+
+
+})
+
+
+</script>
+
+</body>
+</html>
