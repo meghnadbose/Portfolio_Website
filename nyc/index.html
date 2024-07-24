@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="reset.css">
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.css" rel="stylesheet">
 	<script src="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.js"></script>
+    <script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0-beta.21/web.js"></script>
 </head>
 
 <style>
@@ -46,26 +47,71 @@
 		margin-bottom: 18px;
 	}
 
+    .mapboxgl-popup {
+	    max-width: 400px;
+	    font:
+	        12px/20px 'Helvetica Neue',
+	        Arial,
+	        Helvetica,
+	        sans-serif;
+	}
+
+	.top-panel {
+		z-index: 1;
+		background: white;
+		width: 400px;
+/*		height: 100px;*/
+		position: absolute;
+		border: 1px solid black;
+		padding: 10px;
+		margin: 20px;
+	}
+
+	@media (max-width: 960px) {
+		.top-panel {
+			width: 85%;
+		}
+		
+
+
+	}
+
 </style>
 
 <body>
+
     <div class="container">
 		<h1>Ace Your Game: Discover NYC's Top Public Tennis Courts 🎾</h1>
 		<h2>Explore the best spots to serve and volley in the city that never sleeps!</h2>
 		<p class="byline">By Meghnad Bose</p>
 		<p>New York City is a treasure trove for tennis enthusiasts, offering a plethora of public courts scattered across its vibrant boroughs. Central Park's Tennis Center is a top choice, with its idyllic location and well-maintained clay courts. Just imagine serving an ace with the iconic skyline as your backdrop! For those seeking a lively atmosphere, the East River Park courts in Manhattan provide a scenic view of the river and bustling surroundings. Over in Brooklyn, Prospect Park offers a serene escape with its leafy courts, perfect for a peaceful match amidst nature.</p>
-		<div id="map"></div>
+
+        <div class="container">
+		
+            <div class="top-panel">
+                <h3>Find your court 🎾</h3>
+                <div>
+                    <div id='search-box-container'></div>
+                </div>
+            </div>
+    
+            <div id="map"></div>
+        </div>
 		<p>Venture to the Bronx, and you'll find the grand Pelham Bay Park, boasting 20 courts and ample space to perfect your backhand. Queens is not left behind, home to the famed USTA Billie Jean King National Tennis Center, where you can channel your inner pro on the same courts as the US Open champions. For a local favorite, try the Astoria Park courts, offering stunning views of the RFK Bridge. Staten Island's Silver Lake Park rounds out the city's offerings with its picturesque setting and well-kept courts. Whether you're a seasoned player or a curious beginner, NYC's public courts are your ticket to tennis bliss in the heart of the urban jungle!</p>
 	</div>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoibWVnaG5hZGJvc2UiLCJhIjoiY2xxNGxkcGx0MDdseDJrdWs0OTltaGxxdSJ9.lLJlR1dtomwXeFu9HisSug';
+    
+
         const map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/meghnadbose/clyr85ngs02fi01qj39tffud5',
-            center: [-73.935242, 40.730610],
-            zoom: 9.5
-        });
+	        container: 'map', // container ID
+	        center: [-74.0060, 40.7128], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+	        zoom: 9, 
+	        style: 'mapbox://styles/meghnadbose/clyr85ngs02fi01qj39tffud5',
+	        maxZoom: 18,
+	        minZoom: 4
+	    });
 
         map.on('load', function () {
             map.loadImage(
@@ -110,6 +156,36 @@
                 }
             );
         });
+
+        const script = document.getElementById('search-js');
+	    
+	    // wait for the Mapbox Search JS script to load before using it
+	    script.onload = function () {
+	      const mapboxAccessToken = 'pk.eyJ1IjoibWVnaG5hZGJvc2UiLCJhIjoiY2xxNGxkcGx0MDdseDJrdWs0OTltaGxxdSJ9.lLJlR1dtomwXeFu9HisSug';
+
+	      // instantiate a search box instance
+	      const searchBox = new mapboxsearch.MapboxSearchBox()
+
+	      // set the mapbox access token, search box API options
+	      searchBox.accessToken = mapboxAccessToken
+	      searchBox.options = {
+	        language: 'en',
+	        
+	        // this limits the address search to just this bounding box. in this case, new york city
+	        bbox: [-74.2596399, 40.477399, -73.700292, 40.917577]
+	      }
+
+	      // set the mapboxgl library to use for markers and enable the marker functionality
+	      searchBox.mapboxgl = mapboxgl
+	      searchBox.marker = true
+
+	      // bind the search box instance to the map instance
+	      searchBox.bindMap(map)
+
+	      // add the search box instance to the DOM
+	      document.getElementById('search-box-container').appendChild(searchBox)
+	    }
+		
     </script>
 </body>
 </html>
