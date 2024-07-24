@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Mapbox class</title>
+	<title>Discover NYC's Top Public Tennis Courts</title>
 	<link rel="stylesheet" href="reset.css">
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.css" rel="stylesheet">
 	<script src="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.js"></script>
@@ -15,7 +15,6 @@
 		line-height: 1.4;
 	}
 	.container {
-/*		background: red;*/
 		width: 600px;
 		margin: 40px auto 0 auto;
 	}
@@ -86,6 +85,27 @@
                             'icon-image': 'tennis-ball',
                             'icon-size': 0.03 // Adjust the size as needed
                         }
+                    });
+
+                    map.on('click', 'tennisCourtsLayer', function (e) {
+                        const coordinates = e.features[0].geometry.coordinates.slice();
+                        const name = e.features[0].properties.name;
+                        const location = e.features[0].properties.location;
+
+                        
+
+					new mapboxgl.Popup()
+    .setLngLat(coordinates)
+    .setHTML(`<strong>${e.features[0].properties.Name}</strong><br>${e.features[0].properties.Location}`)
+    .addTo(map);
+				});
+
+                    map.on('mouseenter', 'tennisCourtsLayer', function () {
+                        map.getCanvas().style.cursor = 'pointer';
+                    });
+
+                    map.on('mouseleave', 'tennisCourtsLayer', function () {
+                        map.getCanvas().style.cursor = '';
                     });
                 }
             );
