@@ -1,0 +1,131 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Prop_ID": "X010",
+        "Name": "Cary Leeds Tennis Center at Crotona Park",
+        "Location": "E. 173d St. and Crotona Ave.",
+        "Phone": "(718) 247-7420",
+        "Courts": "22",
+        "Indoor_Outdoor": "Indoor",
+        "Tennis_Type": "Hard",
+        "Accessible": "Y",
+        "Info": "Lessons are offered. During the indoor season (The day after Columbus Day &ndash; April 27), there are 10 outdoor courts available, and 10 courts are bubbled and can be rented for a fee. During the outdoor season, there are 15 courts available to Parks tennis permit holders. For booking courts and program information please call or visit <a href=\"http:\/\/www.nyjtl.org\/caryleeds\/\">Cary Leeds Tennis Center's<\/a> website for more information."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.8951, 40.8394]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Prop_ID": "X196",
+        "Name": "Haffen Park",
+        "Location": "Hammersley, Ely, and Gunther Aves.",
+        "Phone": "(718) 379-8347",
+        "Courts": "6",
+        "Indoor_Outdoor": "Outdoor",
+        "Tennis_Type": "Hard",
+        "Accessible": "Y",
+        "Info": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.84, 40.874]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Prop_ID": "X039",
+        "Name": "Pelham Bay Park",
+        "Location": "Bruckner Blvd. and Middletown Rd.",
+        "Phone": "(718) 885-3442",
+        "Courts": "10",
+        "Indoor_Outdoor": "Outdoor",
+        "Tennis_Type": "Hard",
+        "Accessible": "N",
+        "Info": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.8203, 40.8556]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Prop_ID": "M104",
+        "Name": "Central Park",
+        "Location": "Central Park, New York, NY 10024",
+        "Phone": "(212) 280-0205",
+        "Courts": "30",
+        "Indoor_Outdoor": "Outdoor",
+        "Tennis_Type": "Clay",
+        "Accessible": "Y",
+        "Info": "Central Park has the largest set of public tennis courts in NYC, with 26 clay courts and 4 hard courts. Permits are required."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.9654, 40.7851]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Prop_ID": "Q099",
+        "Name": "USTA Billie Jean King National Tennis Center",
+        "Location": "Flushing Meadows Corona Park, Flushing, NY 11368",
+        "Phone": "(718) 760-6200",
+        "Courts": "22",
+        "Indoor_Outdoor": "Indoor/Outdoor",
+        "Tennis_Type": "Hard",
+        "Accessible": "Y",
+        "Info": "Home of the US Open, this facility has numerous courts available for public use with permits."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.8448, 40.7498]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Prop_ID": "B126",
+        "Name": "Prospect Park",
+        "Location": "50 Parkside Ave, Brooklyn, NY 11218",
+        "Phone": "(718) 436-2500",
+        "Courts": "11",
+        "Indoor_Outdoor": "Indoor/Outdoor",
+        "Tennis_Type": "Clay/Hard",
+        "Accessible": "Y",
+        "Info": "Prospect Park offers a serene escape with its leafy courts, perfect for a peaceful match amidst nature."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.9687, 40.6602]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Prop_ID": "S085",
+        "Name": "Silver Lake Park",
+        "Location": "Victory Blvd and Eddy St, Staten Island, NY 10301",
+        "Phone": "(718) 667-3545",
+        "Courts": "6",
+        "Indoor_Outdoor": "Outdoor",
+        "Tennis_Type": "Hard",
+        "Accessible": "Y",
+        "Info": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-74.0871, 40.6187]
+      }
+    }
+  ]
+}
